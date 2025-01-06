@@ -1,27 +1,24 @@
-const CACHE_NAME = 'toko-sembako-cache-v1';
-const urlsToCache = [
-    '/',
-    '/index.html',
-    '/styles.css',
-    '/script.js',
-    '/icon-192x192.png',
-    '/icon-512x512.png'
-];
-
-self.addEventListener('install', (event) => {
+self.addEventListener('install', function(event) {
     event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then((cache) => {
-                return cache.addAll(urlsToCache);
-            })
+        caches.open('toko-sembako-cache').then(function(cache) {
+            return cache.addAll([
+                '/',
+                '/index.html',
+                '/style.css',
+                '/app.js',
+                '/images/keranjang.png',
+                '/images/sembako1.jpg',
+                '/images/sembako2.jpg',
+                '/images/sembako3.jpg'
+            ]);
+        })
     );
 });
 
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', function(event) {
     event.respondWith(
-        caches.match(event.request)
-            .then((response) => {
-                return response || fetch(event.request);
-            })
+        caches.match(event.request).then(function(response) {
+            return response || fetch(event.request);
+        })
     );
 });
