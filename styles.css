@@ -6,50 +6,30 @@ body {
 }
 
 header {
-    background: #4CAF50;
-    color: white;
-    padding: 10px 0;
+    background: #007bff;
+    color: #fff;
+    padding: 20px;
     text-align: center;
+}
+
+.keranjang {
+    width: 50px;
 }
 
 main {
     padding: 20px;
 }
 
-h2 {
-    margin-top: 20px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    background: white;
-    margin: 5px 0;
-    padding: 10px;
+.produk-item {
+    background: #fff;
+    border: 1px solid #ddd;
     border-radius: 5px;
-}
-
-button {
-    background: #4CAF50;
-    color: white;
-    border: none;
+    margin: 10px 0;
     padding: 10px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #45a049;
-}
-
-footer {
     text-align: center;
-    padding: 10px 0;
-    background: #4CAF50;
-    color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+}
+
+.produk-gambar {
+    width: 100px;
+    height: auto;
 }
